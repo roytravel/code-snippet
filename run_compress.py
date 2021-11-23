@@ -2,14 +2,14 @@
 import os
 import tarfile
 
-def get_file(directory: str, fullpaths: list = []) -> list:
+def get_filepaths(directory: str, filepaths: list = []) -> list:
     for (root, dir, files) in os.walk(directory):
         root = root + '/'
         for _file in files:
             if _file.endswith('.ann') and _file[0] is not ".":
-                fullpath = root + _file
-                fullpaths.append(fullpath)
-    return fullpaths
+                filepaths = root + _file
+                filepaths.append(filepath)
+    return filepaths
             
 
 def make_tar(filepaths: str) -> None:
