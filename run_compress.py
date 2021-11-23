@@ -7,7 +7,7 @@ def get_filepaths(directory: str, filepaths: list = []) -> list:
         root = root + '/'
         for _file in files:
             if _file.endswith('.ann') and _file[0] is not ".":
-                filepaths = root + _file
+                filepath = root + _file
                 filepaths.append(filepath)
     return filepaths
             
