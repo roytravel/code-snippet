@@ -2,8 +2,7 @@
 import os
 import tarfile
 
-def get_file(directory) -> list:
-    fullpaths = []
+def get_file(directory: str, fullpaths: list = []) -> list:
     for (root, dir, files) in os.walk(directory):
         root = root + '/'
         for _file in files:
@@ -13,7 +12,7 @@ def get_file(directory) -> list:
     return fullpaths
             
 
-def make_tar(filepaths) -> None:
+def make_tar(filepaths: str) -> None:
     with tarfile.open("Article.tar.gz" ,mode="w:gz") as tar:
         for _file in filepaths:
             tar.add(_file)
